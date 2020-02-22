@@ -5,13 +5,13 @@
     <title>Document</title>
 </head>
 <body>
-
     <?php
-        $x = 100;
-        $x = $x + 20;
-        $x += 20;
+        $x = 10;
+        $y = 20;
 
-        echo $x;
+        if ($x == $y || 1 == 1) {
+            echo "True";
+        }
     ?>
 </body>
 </html>

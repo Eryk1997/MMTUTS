@@ -5,13 +5,14 @@
     <title>Document</title>
 </head>
 <body>
-
     <?php
-        $x = 100;
-        $x = $x + 20;
-        $x += 20;
+        $x = 10;
+        echo ++$x . "</br>";
+
+        echo $x++ . "</br>";
 
         echo $x;
+
     ?>
 </body>
 </html>
