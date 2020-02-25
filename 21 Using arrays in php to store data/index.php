@@ -4,13 +4,31 @@
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+<form method='post'>
+    <input type="text" name="value" placeholder="Add text to list">
+    <button type="submit" name="submit" value="submit">OK</button>
+
+</form>
+
 <body>
 
     <?php
+    session_start();
 
-        $array = array("Daniel", "Jane", "Jacob", "John", "Mariane");
+        if(isset($_GET["submit"])){
+            $text = $_POST["value"];
+            $_SESSION['user_playlists'][] = $text;
 
-        echo $array[0];
+            $array = array();
+
+            for ($i = 0; $i < count($_SESSION['user_playlists']); $i++) {
+                array_push($array, $_SESSION['user_playlists'][$i]);
+            }
+
+            foreach($array as $list){
+                echo $list . "<br>";
+            }
+        }
 
     ?>
 
