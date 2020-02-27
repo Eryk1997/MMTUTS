@@ -1,7 +1,4 @@
-<?php
-    include_once 'connect.php';
 
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,17 +8,15 @@
 </head>
 <body>
 
-<?php
-    $sql = "select * from users;";
-    $result = mysqli_query($conn, $sql);
-    $resultCheck = mysqli_num_rows($result);
+<form action="includes/signup.inc.php" method="POST">
+    <input type="text" name="first" placeholder="Firsrt Name"> <br>
+    <input type="text" name="last" placeholder="Last Name"> <br>
+    <input type="text" name="email" placeholder="E-mail"> <br>
+    <input type="text" name="uid" placeholder="User Name"> <br>
+    <input type="password" name="pwd" placeholder="Password"> <br>
+    <button type="submit" name="submit">Sign up</button><br>
+</form>
 
-    if ($resultCheck > 0 ) {
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo $row['user_uid'];
-        }
-    }
-?>
 
 </body>
 </html>
