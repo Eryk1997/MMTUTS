@@ -1,5 +1,5 @@
 <?php
-    include_once 'connect.php';
+    /*include_once 'connect.php';
 
     $first = mysqli_real_escape_string($conn,$_POST['first']);
     $last = mysqli_real_escape_string($conn,$_POST['last']);
@@ -22,3 +22,24 @@
     }
 
     header("Location: ../index.php?signup=succes");
+    */
+    if (isset($_POST['submit'])) {
+        include_once 'connect.php';
+        $first = $_POST['first'];
+        $last = $_POST['last'];
+        $email = $_POST['email'];
+        $uid = $_POST['uid'];
+        $pwd = $_POST['pwd'];
+
+        if (empty($first) || empty($last) || empty($email) || empty($uid) || empty($pwd)) {
+            header('Location: ../index.php?signup=empty');
+        }else {
+            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                header('Location: ../index.php?signup=invalidemail');
+            } else{
+                echo "Sign up the user";
+            }
+        }
+    } else{
+        header('Location: ../index.php?signup=error');
+    }
