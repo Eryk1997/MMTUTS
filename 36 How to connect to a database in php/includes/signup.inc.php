@@ -24,7 +24,9 @@
     header("Location: ../index.php?signup=succes");
     */
     if (isset($_POST['submit'])) {
+
         include_once 'connect.php';
+
         $first = $_POST['first'];
         $last = $_POST['last'];
         $email = $_POST['email'];
@@ -33,11 +35,19 @@
 
         if (empty($first) || empty($last) || empty($email) || empty($uid) || empty($pwd)) {
             header('Location: ../index.php?signup=empty');
+            exit();
         }else {
-            if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                header('Location: ../index.php?signup=invalidemail');
-            } else{
-                echo "Sign up the user";
+            if (!preg_match("/^[a-zA-Z]*$/",$first) || !preg_match("/^[a-zA-Z]*$/",$last)) {
+                header('Location: ../index.php?signup=char');
+                exit();
+            }else{
+                if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                    header("Location: ../index.php?signup=email&first=$first&last=$last&uid=$uid");
+                    exit();
+                } else{
+                    header('Location: ../index.php?signup=success');
+                    exit();
+                }
             }
         }
     } else{
