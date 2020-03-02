@@ -7,11 +7,22 @@
 <body>
     <?php
 
-        $data = array(
+        /*$data = array(
             "first" => "Daniel",
             'last' => "Nielsen",
             'age' => 25);
         echo $data['first'];
+*/
+        $data = array(
+            array(1,2 ,3),
+            "Daniel",
+            "John",
+            "Jane"
+        );
+        print_r($data);
+        echo "<br>" . $data[1];
+        echo "<br>" . $data[0][0];
+
     ?>
 
 </body>
