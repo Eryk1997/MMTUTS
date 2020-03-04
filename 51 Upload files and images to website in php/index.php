@@ -27,9 +27,11 @@
                         $fileInfo = glob($fileName);
                         $fileExt = explode(".", $fileInfo[0]);
                         $fileActualExt = $fileExt[1];
-                        echo "<img src='uploads/profile".$id.".".$fileActualExt."?".mt_rand()."'>";
+                        echo "<p id='profileImg'>";
+                        echo "<img src='uploads/profile".$id.".".$fileActualExt."?".mt_rand()."' style=height:300px>";
+                        echo "</p>";
                     } else{
-                        echo "<img src='uploads/profiledefault.jpg'>";
+                        echo "<img src='uploads/profiledefault.jpg' style=height:300px>";
                     }
                     echo "<p>".$row['username']."</p>";
                 echo "</div>";
