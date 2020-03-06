@@ -9,6 +9,8 @@ class Person{
     private $eyeColor;
     private $age;
 
+    public static $drinkingAge = 18;
+
     public function __construct($name, $eyeColor, $age)
     {
         $this->name = $name;
@@ -46,15 +48,18 @@ class Person{
         return $this->age;
     }
 
+    public function getDA()
+    {
+        return self::$drinkingAge;
+    }
+
+    public static function setDrinkingAge($newDA){
+        self::$drinkingAge = $newDA;
+    }
+
     public function __destruct()
     {
 
     }
 }
 
-class Pet extends Person{
-    public function owner(){
-        $a = $this -> first;
-        return $a;
-    }
-}

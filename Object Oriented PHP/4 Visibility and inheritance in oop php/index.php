@@ -30,6 +30,10 @@
     echo "<br>";
     echo $eryk->getName();
 
+    echo Person::$drinkingAge;
+    Person::setDrinkingAge(21);
+    echo Person::$drinkingAge;
+
     //destroy object
     unset($eryk);
      ?>
