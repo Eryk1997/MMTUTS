@@ -29,6 +29,9 @@
     $eryk = new Person("Eryk2","blue",23);
     echo "<br>";
     echo $eryk->getName();
+
+    //destroy object
+    unset($eryk);
      ?>
 </body>
 </html>
