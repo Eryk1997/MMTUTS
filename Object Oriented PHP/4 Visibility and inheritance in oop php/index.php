@@ -14,7 +14,7 @@
 
     //echo $pet01->owner();
 
-    $person = new Person();
+    /*$person = new Person();
     $person->setName("Eryk");
     echo $person->name;
 
@@ -25,6 +25,10 @@
     echo "<br>";
     $newPerson->setAge(4);
     echo $newPerson->age;
+*/
+    $eryk = new Person("Eryk2","blue",23);
+    echo "<br>";
+    echo $eryk->getName();
      ?>
 </body>
 </html>
