@@ -8,6 +8,7 @@ include 'includes/class-autoload.inc.php';
         $testObj = new Test();
         if(isset($_POST['submit'])){
             $testObj->setUsersStmt("$firstName","$lastName","$dateOfBirth");
+            header('Location: ../index.php?succesAddUser');
         }
 
 ?>

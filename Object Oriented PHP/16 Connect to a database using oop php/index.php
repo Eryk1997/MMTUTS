@@ -17,7 +17,6 @@ include 'includes/useradd.inc.php';
     </form>
 
     <?php
-        //$testObj = new Test();
         $testObj->getUsers();
     ?>
 
