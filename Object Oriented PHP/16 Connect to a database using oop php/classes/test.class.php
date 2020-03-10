@@ -5,7 +5,7 @@ class Test extends Dbh{
         $sql = 'SELECT * FROM users';
         $stmt = $this->connect()->query($sql);
         while ($row = $stmt->fetch()) {
-            echo $row['user_firstname'] . '<br>';
+            echo $row['user_firstname'] . ' '. $row['user_lastname'] . ': ' . $row['user_dateofbirth'] . '<br>';
         }
     }
 

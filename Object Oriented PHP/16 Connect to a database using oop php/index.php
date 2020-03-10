@@ -1,5 +1,6 @@
 <?php
-include 'includes/class-autoload.inc.php';
+//include 'includes/class-autoload.inc.php';
+include 'includes/useradd.inc.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -8,11 +9,16 @@ include 'includes/class-autoload.inc.php';
     <title>Document</title>
 </head>
 <body>
-    <?php
-        $testObj = new Test();
-        $testObj->getUsersStmt("Daniel","Nielsen");
-        $testObj->setUsersStmt("Eryk","Janocha","1997-02-16");
+    <form action="" method="POST">
+        <input type="text" name="firstName" placeholder="First Name">
+        <input type="text" name="lastName" placeholder="Last Name">
+        <input type="date" name="dateOfBirth" placeholder="Date of Birth">
+        <button type="submit" name="submit">ADD USER</button>
+    </form>
 
+    <?php
+        //$testObj = new Test();
+        $testObj->getUsers();
     ?>
 
 </body>
