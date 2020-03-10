@@ -11,5 +11,6 @@ abstract class AveragePerson{
     }
 
     abstract function talk($say);
+
 }
 

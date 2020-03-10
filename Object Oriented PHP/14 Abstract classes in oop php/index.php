@@ -32,7 +32,7 @@ echo $class02->prefixName("Pacwoman") . "<br>";
 include_once 'abstract/averageperson.abstract.php';
 include_once 'classes/joe.class.php';
 include_once 'classes/bob.class.php';
-include_once 'interface/person.interface.php';
+//include_once 'interfaces/person.interface.php';
 
 $people[] = new Bob();
 $people[] = new Joe();
@@ -41,3 +41,26 @@ foreach ($people as $person) {
     $person->doWalk('over there');
     $person->talk('PHP rules');
 }
+
+
+
+
+interface a{
+    public function xd();
+}
+
+abstract class eryk implements a{
+    public function xd(){
+        echo "<br> errrrr";
+    }
+}
+
+class eryk2 extends eryk{
+
+    public function xd(){
+        echo "<br> 2222";
+    }
+}
+
+$a = new eryk2();
+$a->xd();
