@@ -1,6 +1,6 @@
 <?php
-//include 'includes/class-autoload.inc.php';
-include 'includes/useradd.inc.php';
+include 'includes/class-autoload.inc.php';
+//include 'includes/useradd.inc.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +17,12 @@ include 'includes/useradd.inc.php';
     </form>
 
     <?php
-        $testObj->getUsers();
+        //$testObj->getUsers();
+        $userObj = new UserView();
+        $userObj->showUser("Daniel");
+        $user2Obj = new UserContr();
+        $user2Obj->createUser("Jane", "Doe","1997-01-15");
+
     ?>
 
 </body>

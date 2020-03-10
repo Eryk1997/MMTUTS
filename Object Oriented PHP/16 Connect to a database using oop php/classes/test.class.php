@@ -1,8 +1,8 @@
 <?php
 
-include 'interface/test.interface.php';
+//include 'interface/test.interface.php';
 
-class Test extends Dbh implements TestInterface{
+class Test{
     public function getUsers(){
         $sql = 'SELECT * FROM users';
         $stmt = $this->connect()->query($sql);
