@@ -5,10 +5,8 @@ include 'includes/class-autoload.inc.php';
         $lastName = $_POST['lastName'];
         $dateOfBirth = $_POST['dateOfBirth'];
 
-        $testObj = new Test();
-        if(isset($_POST['submit'])){
-            $testObj->setUsersStmt("$firstName","$lastName","$dateOfBirth");
-            header('Location: ../index.php?succesAddUser');
-        }
+        $userAdd = new UserContr();
+        if(isset($_POST['submit']))
+            $userAdd->createUser($firstName, $lastName, $dateOfBirth);
 
 ?>
